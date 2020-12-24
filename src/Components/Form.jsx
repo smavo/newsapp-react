@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import styled from '@emotion/styled';
+import useSelect from '../hooks/useSelect';
 
 const Seccion1 = styled.div`
     max-width:900px;
@@ -55,15 +56,26 @@ const Selector = styled.div`
 `
 
 function Form() {
+
+const opciones = [
+    { value: 'general', label: 'General'},
+    { value: 'business', label: 'Negocios'},
+    { value: 'entertainment', label: 'Entretenimiento'},
+    { value: 'health', label: 'Salud'},
+    { value: 'science', label: 'Ciencia'},
+    { value: 'sports', label: 'Deportes'},
+    { value: 'technology', label: 'Tecnología'}
+]
+
+    // Utilizar hook
+    const [categoria, SelectNoticias] = useSelect('general', opciones)
+
     return (
         <Fragment>
             <Seccion1>
                 <h3>Encuentra Noticias por Categorias</h3>
                 <Selector>
-                    <select>
-                        <option>Demo 0</option>
-                        <option>Demo 1</option>
-                    </select>
+                    <SelectNoticias />
                     <Boton type="submit"
                         value="Buscar">
                         Buscar
