@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
 function useSelect(setInicial, opciones) {
+    //console.log(opciones);
 
     // State del custom hook
     const [state, setState] = useState(setInicial);

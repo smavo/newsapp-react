@@ -55,7 +55,7 @@ const Selector = styled.div`
     }
 `
 
-function Form() {
+function Form({selecCategoria}) {
 
 const opciones = [
     { value: 'general', label: 'General'},
@@ -70,17 +70,25 @@ const opciones = [
     // Utilizar hook
     const [categoria, SelectNoticias] = useSelect('general', opciones)
 
+    const searchNews = (e) => {
+        e.preventDefault();
+
+        selecCategoria(categoria)
+    }
+
     return (
         <Fragment>
             <Seccion1>
                 <h3>Encuentra Noticias por Categorias</h3>
-                <Selector>
-                    <SelectNoticias />
-                    <Boton type="submit"
-                        value="Buscar">
-                        Buscar
-                    </Boton>
-                </Selector>
+                <form onSubmit={searchNews}>
+                    <Selector>
+                        <SelectNoticias />
+                        <Boton type="submit"
+                            value="Buscar">
+                            Buscar
+                        </Boton>
+                    </Selector>
+                </form>
             </Seccion1>
 
         </Fragment>
