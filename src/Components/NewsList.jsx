@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import styled from '@emotion/styled';
-import noFoundImg from '../noFound.jpg'
+import noFoundImg from '../noFound.jpg';
+import PropTypes from 'prop-types';
 
 const Seccion = styled.div`
     max-width:900px;
@@ -76,4 +77,8 @@ function News({ newsLists }) {
     )
 }
 
-export default News
+News.prototype = {
+    newsLists: PropTypes.array.isRequired
+}
+
+export default News;

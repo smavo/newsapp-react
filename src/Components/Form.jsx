@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import styled from '@emotion/styled';
 import useSelect from '../hooks/useSelect';
+import PropTypes from 'prop-types';
 
 const Seccion1 = styled.div`
     max-width:900px;
@@ -94,5 +95,11 @@ const opciones = [
         </Fragment>
     )
 }
+
+
+Form.propTypes = {
+    selecCategoria: PropTypes.func.isRequired
+}
+
 
 export default Form

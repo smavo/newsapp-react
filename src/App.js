@@ -30,7 +30,7 @@ function App() {
       const url = `${API_URL}?country=mx&category=${categoria}&apiKey=${API_KEY}`;
       const respuesta = await fetch(url);
       const noticias = await respuesta.json();
-      console.log(noticias)
+      //console.log(noticias)
       guardarNoticias(noticias.articles)
     }
     consultarApi();

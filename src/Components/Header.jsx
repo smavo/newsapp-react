@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import styled from '@emotion/styled';
+import PropTypes from 'prop-types';
 
 const Encabezado = styled.div`
     font-family: 'Noto Sans JP', sans-serif;
@@ -34,6 +35,10 @@ function Header({titulo}) {
             </Encabezado>
         </Fragment>
     )
+}
+
+Header.propTypes = {
+    titulo: PropTypes.string.isRequired
 }
 
 export default Header;
